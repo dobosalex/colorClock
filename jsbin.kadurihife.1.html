@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2023 by anonymous (http://jsbin.com/kadurihife/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <title>clock</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
+  <link href="https://fonts.googleapis.com/css?family=Exo+2:100" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=AHMmDzOq6A2rrt7S9foK-ISEuVTpezDxMYLDpcUowZQ9LUDtr6hHYtfStFF6PjKmZfi0ksnQyaqCftVcNLl1PQ" charset="UTF-8"></script><style id="jsbin-css">
+* {
+  box-sizing: border-box;
+  border: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+#clock {
+  font-family: 'EXO 2', sans-serif;
+  text-align: center;
+  position: relative;
+  bottom: -50%;
+  font-size: 5rem;
+  margin-top: -2.5rem;
+}
+</style>
+</head>
+<body>
+  <div id="clock">12:13:14</div>
+  <script id="jsbin-javascript">
+function colorClock(){
+
+var date = new Date();
+
+var hours = date.getHours();
+var minutes = date.getMinutes();
+var seconds = date.getSeconds();
+
+if (seconds < 10) {
+  seconds = '0' + seconds;
+}
+
+if (minutes < 10) {
+  minutes = '0' + minutes;
+}
+
+if (hours < 10)  {
+  hours = '0' + hours;
+}
+
+console.log(hours + ":" + minutes + ":" + seconds);
+var clockFace = hours + ":" + minutes + ":" + seconds;
+document.getElementById('clock').innerHTML = clockFace;
+
+setTimeout(function() {
+  colorClock()
+}, 1000,) 
+ 
+document.body.style.background = 'red';
+var hexColor = '#' + hours + minutes + seconds;
+document.body.style.background = hexColor;
+}
+colorClock();
+
+
+</script>
+</body>
+</html>
